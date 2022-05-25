@@ -1,3 +1,5 @@
+// ------- Task 1 Start
+
 let mouse = document.getElementById("mouse")
 let cont = document.getElementById("cont")
 let marginX = 0;
@@ -220,5 +222,68 @@ console.log(combined);
 
 // ----- Task 2 End
 
+let check = document.getElementById("check")
 
 
+check.onclick = function () {
+    // swal("Oops", "Something went wrong!", "error")
+    // swal("Good job!", "You clicked the button!", "success");
+    // swal({ closeOnEsc: false })
+
+    swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                });
+            } else {
+                swal("Your imaginary file is safe!");
+            }
+        });
+}
+
+// deyerlendirme
+
+// import React from 'react'
+// import swal from '@sweetalert/with-react'
+
+// const onPick = value => {
+//     swal("Thanks for your rating!", `You rated us ${value}/3`, "success")
+// }
+
+// const MoodButton = ({ rating, onClick }) => (
+//     <button
+//         data-rating={rating}
+//         className="mood-btn"
+//         onClick={() => onClick(rating)}
+//     />
+// )
+
+// swal({
+//     text: "How was your experience getting help with this issue?",
+//     buttons: {
+//         cancel: "Close",
+//     },
+//     content: (
+//         <div>
+//             <MoodButton
+//                 rating={1}
+//                 onClick={onPick}
+//             />
+//             <MoodButton
+//                 rating={2}
+//                 onClick={onPick}
+//             />
+//             <MoodButton
+//                 rating={3}
+//                 onClick={onPick}
+//             />
+//         </div>
+//     )
+// })
